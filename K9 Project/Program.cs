@@ -10,6 +10,8 @@ namespace K9_Project
     {
         static void Main(string[] args)
         {
+            // demonstrating a change !!!
+
             // read in input image
             Console.WriteLine("Enter a file to analyze: ");
             string imageInput = Console.ReadLine();

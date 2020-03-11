@@ -74,11 +74,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michael\\source\\repos\\K9 Project\\K9 Project\\K9 Project.csproj",
+      "projectUniqueName": "C:\\Users\\Michael\\Documents\\K9 Project\\K9-Movement-Project\\K9 Project\\K9 Project.csproj",
       "projectName": "K9 Project",
-      "projectPath": "C:\\Users\\Michael\\source\\repos\\K9 Project\\K9 Project\\K9 Project.csproj",
+      "projectPath": "C:\\Users\\Michael\\Documents\\K9 Project\\K9-Movement-Project\\K9 Project\\K9 Project.csproj",
       "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michael\\source\\repos\\K9 Project\\K9 Project\\obj\\",
+      "outputPath": "C:\\Users\\Michael\\Documents\\K9 Project\\K9-Movement-Project\\K9 Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",

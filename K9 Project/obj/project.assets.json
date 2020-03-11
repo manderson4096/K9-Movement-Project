@@ -1,0 +1,132 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Emgu.CV/4.2.0.3636": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Emgu.CV.World.NetStandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Emgu.CV.World.NetStandard.dll": {}
+        }
+      },
+      "Emgu.CV.runtime.windows/4.2.0.3636": {
+        "type": "package",
+        "dependencies": {
+          "Emgu.CV": "[4.2.0.3636]"
+        },
+        "build": {
+          "build/Emgu.CV.runtime.windows.targets": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Emgu.CV/4.2.0.3636": {
+      "sha512": "jVb+khccJXPTOMMkIbIhRcK5dME9hdoxjflNrwrHxMUzYF8SclJuQmJNnldnUoPktW81Yq+DhsVrFQlFXK/e0A==",
+      "type": "package",
+      "path": "emgu.cv/4.2.0.3636",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Emgu.CV.License.txt",
+        "emgu.cv.4.2.0.3636.nupkg.sha512",
+        "emgu.cv.nuspec",
+        "lib/netstandard2.0/Emgu.CV.World.NetStandard.dll",
+        "lib/netstandard2.0/Emgu.CV.World.NetStandard.xml"
+      ]
+    },
+    "Emgu.CV.runtime.windows/4.2.0.3636": {
+      "sha512": "NiAs/dKx3DVJO8wFtrIKjQLe6DYGNFcigJu5JCbeSWJalOivI2N/1qJJjqvpOdUrJ8NpTMqnbUcTgVD4UB5+xw==",
+      "type": "package",
+      "path": "emgu.cv.runtime.windows/4.2.0.3636",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Emgu.CV.License.txt",
+        "build/Emgu.CV.runtime.windows.targets",
+        "build/x64/concrt140.dll",
+        "build/x64/cvextern.dll",
+        "build/x64/msvcp140.dll",
+        "build/x64/opencv_videoio_ffmpeg420_64.dll",
+        "build/x64/vcruntime140.dll",
+        "build/x86/concrt140.dll",
+        "build/x86/cvextern.dll",
+        "build/x86/msvcp140.dll",
+        "build/x86/opencv_videoio_ffmpeg420.dll",
+        "build/x86/vcruntime140.dll",
+        "emgu.cv.runtime.windows.4.2.0.3636.nupkg.sha512",
+        "emgu.cv.runtime.windows.nuspec",
+        "lib/net461/Emgu.CV.UI.dll",
+        "lib/net461/Emgu.CV.UI.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Emgu.CV.runtime.windows >= 4.2.0.3636"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Michael\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Michael\\source\\repos\\K9 Project\\K9 Project\\K9 Project.csproj",
+      "projectName": "K9 Project",
+      "projectPath": "C:\\Users\\Michael\\source\\repos\\K9 Project\\K9 Project\\K9 Project.csproj",
+      "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Michael\\source\\repos\\K9 Project\\K9 Project\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "Emgu.CV.runtime.windows": {
+            "target": "Package",
+            "version": "[4.2.0.3636, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

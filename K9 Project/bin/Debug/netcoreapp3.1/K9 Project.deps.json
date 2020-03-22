@@ -1,0 +1,53 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "K9 Project/1.0.0": {
+        "dependencies": {
+          "Emgu.CV.runtime.windows": "4.2.0.3636"
+        },
+        "runtime": {
+          "K9 Project.dll": {}
+        }
+      },
+      "Emgu.CV/4.2.0.3636": {
+        "runtime": {
+          "lib/netstandard2.0/Emgu.CV.World.NetStandard.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Emgu.CV.runtime.windows/4.2.0.3636": {
+        "dependencies": {
+          "Emgu.CV": "4.2.0.3636"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "K9 Project/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Emgu.CV/4.2.0.3636": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jVb+khccJXPTOMMkIbIhRcK5dME9hdoxjflNrwrHxMUzYF8SclJuQmJNnldnUoPktW81Yq+DhsVrFQlFXK/e0A==",
+      "path": "emgu.cv/4.2.0.3636",
+      "hashPath": "emgu.cv.4.2.0.3636.nupkg.sha512"
+    },
+    "Emgu.CV.runtime.windows/4.2.0.3636": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NiAs/dKx3DVJO8wFtrIKjQLe6DYGNFcigJu5JCbeSWJalOivI2N/1qJJjqvpOdUrJ8NpTMqnbUcTgVD4UB5+xw==",
+      "path": "emgu.cv.runtime.windows/4.2.0.3636",
+      "hashPath": "emgu.cv.runtime.windows.4.2.0.3636.nupkg.sha512"
+    }
+  }
+}

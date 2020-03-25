@@ -21,3 +21,26 @@ C:\Users\Michael\source\repos\K9 Project\K9 Project\bin\Debug\netcoreapp3.1\Emgu
 C:\Users\Michael\source\repos\K9 Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.csproj.CopyComplete
 C:\Users\Michael\source\repos\K9 Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.dll
 C:\Users\Michael\source\repos\K9 Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.pdb
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x64\concrt140.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x64\cvextern.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x64\msvcp140.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x64\opencv_videoio_ffmpeg420_64.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x64\vcruntime140.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x86\concrt140.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x86\cvextern.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x86\msvcp140.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x86\opencv_videoio_ffmpeg420.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\x86\vcruntime140.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\K9 Project.exe
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\K9 Project.deps.json
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\K9 Project.runtimeconfig.json
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\K9 Project.runtimeconfig.dev.json
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\K9 Project.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\K9 Project.pdb
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\bin\Debug\netcoreapp3.1\Emgu.CV.World.NetStandard.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.csprojAssemblyReference.cache
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.AssemblyInfoInputs.cache
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.AssemblyInfo.cs
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.csproj.CopyComplete
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.dll
+C:\Users\Michael\Documents\K9 Project\K9-Movement-Project\K9 Project\obj\Debug\netcoreapp3.1\K9 Project.pdb

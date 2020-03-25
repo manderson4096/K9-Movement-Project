@@ -10,8 +10,6 @@ namespace K9_Project
     {
         static void Main(string[] args)
         {
-            // demonstrating a change !!!
-
             // read in input image
             Console.WriteLine("Enter a file to analyze: ");
             string imageInput = Console.ReadLine();
@@ -44,25 +42,28 @@ namespace K9_Project
             double FindLowerBound(UMat image) => image.Size.Height * 0.60;
 
             // determine if K9 needs to move left or right
-            string DetermineHorizontal(CircleF target) => target.Center.X < FindLeftBound(uimage) ? 
-                "Move right to center the target" : target.Center.X > FindRightBound(uimage) ? 
+            string DetermineHorizontal(CircleF target, UMat image) => 
+                target.Center.X < FindLeftBound(image) ? 
+                "Move right to center the target" : target.Center.X > FindRightBound(image) ? 
                 "Move left to center the target" : "Target is horizontally centered";
 
             // determine if K9 needs to tilt head up or down
-            string DetermineVertical(CircleF target) => target.Center.Y > FindLowerBound(uimage) ?
-                "Tilt head up to center the target" : target.Center.Y < FindUpperBound(uimage) ?
+            string DetermineVertical(CircleF target, UMat image) => 
+                target.Center.Y > FindLowerBound(image) ?
+                "Tilt head up to center the target" : target.Center.Y < FindUpperBound(image) ?
                 "Tilt head down to center the target" : "Target is vertically centered";
 
             // find image area limit that the target should fill
             double FindAreaLimit(UMat image) => image.Size.Height * image.Size.Width * 0.10;
 
             // determine if K9 needs to move forward
-            string DetermineMovement(CircleF target) => target.Area > FindAreaLimit(uimage) ? 
+            string DetermineMovement(CircleF target, UMat image) => 
+                target.Area > FindAreaLimit(image) ? 
                 "Stop (no forward movement)" : "Move forward";
 
-            Console.WriteLine(DetermineHorizontal(circles[0]));
-            Console.WriteLine(DetermineVertical(circles[0]));
-            Console.WriteLine(DetermineMovement(circles[0]));
+            Console.WriteLine(DetermineHorizontal(circles[0], uimage));
+            Console.WriteLine(DetermineVertical(circles[0], uimage));
+            Console.WriteLine(DetermineMovement(circles[0], uimage));
         }
     }
 }

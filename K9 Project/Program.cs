@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
+using Emgu.CV.Util;
 
 namespace K9_Project
 {
@@ -29,11 +31,112 @@ namespace K9_Project
             double circleAccumulatorThreshold = 120;
             CircleF[] circles = CvInvoke.HoughCircles(uimage, HoughType.Gradient, 2.0, 20.0, cannyThreshold, circleAccumulatorThreshold, 5);
 
+
+            // find edges
+            double cannyThresholdLinking = 120.0;
+            UMat cannyEdges = new UMat();
+            CvInvoke.Canny(uimage, cannyEdges, cannyThreshold, cannyThresholdLinking);
+
+            LineSegment2D[] lines = CvInvoke.HoughLinesP(
+               cannyEdges,
+               1,               //Distance resolution in pixel-related units
+               Math.PI / 45.0,  //Angle resolution measured in radians.
+               20,              //threshold
+               30,              //min Line width
+               10);             //gap between lines
+
+
+            // find rectangles
+            List<RotatedRect> boxList = new List<RotatedRect>();
+
+            using (VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint())
+            {
+                CvInvoke.FindContours(cannyEdges, contours, null, RetrType.List, ChainApproxMethod.ChainApproxSimple);
+                int count = contours.Size;
+                for (int i = 0; i < count; i++)
+                {
+                    using (VectorOfPoint contour = contours[i])
+                    using (VectorOfPoint approxContour = new VectorOfPoint())
+                    {
+                        CvInvoke.ApproxPolyDP(contour, approxContour, CvInvoke.ArcLength(contour, true) * 0.05, true);
+                        if (CvInvoke.ContourArea(approxContour, false) > 100) //only consider contours with area greater than 250
+                        {
+                            if (approxContour.Size == 4) //The contour has 4 vertices.
+                            {
+                                bool isRectangle = true;
+                                Point[] pts = approxContour.ToArray();
+                                LineSegment2D[] edges = PointCollection.PolyLine(pts, true);
+
+                                for (int j = 0; j < edges.Length; j++)
+                                {
+                                    double angle = Math.Abs(
+                                       edges[(j + 1) % edges.Length].GetExteriorAngleDegree(edges[j]));
+                                    if (angle < 80 || angle > 100)
+                                    {
+                                        isRectangle = false;
+                                        break;
+                                    }
+                                }
+
+                                if (isRectangle) boxList.Add(CvInvoke.MinAreaRect(approxContour));
+                            }
+                        }
+                    }
+                }
+            }
+
+            // print detected rectangles to output file
+            Image<Bgr, Byte> rectangleImage = img.CopyBlank();
+            foreach (RotatedRect box in boxList)
+                rectangleImage.Draw(box, new Bgr(Color.DarkOrange), 2);
+            rectangleImage.Save("output-rectangles.bmp");
+
             // print detected circles to output file
             Image<Bgr, Byte> circleImage = img.CopyBlank();
             foreach (CircleF circle in circles)
                 circleImage.Draw(circle, new Bgr(Color.Green), 2);
-            circleImage.Save("output.bmp");
+            circleImage.Save("output-circles.bmp");
+
+
+            // function to detect if target center X values match
+            bool detectTargetX(CircleF circle, RotatedRect rectangle) => 
+                (circle.Center.X > (rectangle.Center.X) * 0.99) && 
+                (circle.Center.X < (rectangle.Center.X) * 1.01) ? true : false;
+
+            // function to detect if target center Y values match
+            bool detectTargetY(CircleF circle, RotatedRect rectangle) =>
+                (circle.Center.Y > (rectangle.Center.Y) * 0.99) &&
+                (circle.Center.Y < (rectangle.Center.Y) * 1.01) ? true : false;
+
+            // checking for target in image
+            bool targetFound = false;
+            PointF targetLocation;
+            foreach (CircleF circle in circles)
+            {
+                foreach(RotatedRect box in boxList)
+                {
+                    if (detectTargetX(circle, box) == true) // check if X values match
+                    {
+                        if (detectTargetY(circle, box) == true) // check if Y values match
+                        {
+                            Console.WriteLine("Target is found at " + circle.Center);
+                            targetLocation = circle.Center;
+                            targetFound = true;
+                            break;
+                        }
+                        else
+                            continue;
+
+                    }
+                    
+                    else if (targetFound == true) // if target is found, stop the loop
+                        break;
+
+                    else
+                        continue;
+                }
+            }
+
 
             // find image zones used for movement determinations
             double FindLeftBound(UMat image) => image.Size.Width * 0.45;

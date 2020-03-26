@@ -59,9 +59,9 @@ namespace K9_Project
                     using (VectorOfPoint approxContour = new VectorOfPoint())
                     {
                         CvInvoke.ApproxPolyDP(contour, approxContour, CvInvoke.ArcLength(contour, true) * 0.05, true);
-                        if (CvInvoke.ContourArea(approxContour, false) > 100) //only consider contours with area greater than 250
+                        if (CvInvoke.ContourArea(approxContour, false) > 250) //only consider contours with area greater than 250
                         {
-                            if (approxContour.Size == 4) //The contour has 4 vertices.
+                            if (approxContour.Size == 4) // rectangles have 4 contours (vertices)
                             {
                                 bool isRectangle = true;
                                 Point[] pts = approxContour.ToArray();
@@ -110,7 +110,7 @@ namespace K9_Project
 
             // checking for target in image
             bool targetFound = false;
-            PointF targetLocation;
+            CircleF targetCircle = new CircleF();
             foreach (CircleF circle in circles)
             {
                 foreach(RotatedRect box in boxList)
@@ -120,7 +120,7 @@ namespace K9_Project
                         if (detectTargetY(circle, box) == true) // check if Y values match
                         {
                             Console.WriteLine("Target is found at " + circle.Center);
-                            targetLocation = circle.Center;
+                            targetCircle = circle;
                             targetFound = true;
                             break;
                         }
@@ -164,9 +164,14 @@ namespace K9_Project
                 target.Area > FindAreaLimit(image) ? 
                 "Stop (no forward movement)" : "Move forward";
 
-            Console.WriteLine(DetermineHorizontal(circles[0], uimage));
-            Console.WriteLine(DetermineVertical(circles[0], uimage));
-            Console.WriteLine(DetermineMovement(circles[0], uimage));
+            if (targetFound == true)
+            {
+                Console.WriteLine(DetermineHorizontal(targetCircle, uimage));
+                Console.WriteLine(DetermineVertical(targetCircle, uimage));
+                Console.WriteLine(DetermineMovement(targetCircle, uimage));
+            }
+            else
+                Console.WriteLine("Target was not found.");
         }
     }
 }

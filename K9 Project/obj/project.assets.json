@@ -69,19 +69,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Michael\\.nuget\\packages\\": {}
+    "C:\\Users\\julia\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Michael\\Documents\\K9 Project\\K9-Movement-Project\\K9 Project\\K9 Project.csproj",
+      "projectUniqueName": "C:\\Users\\julia\\Documents\\Second Try k9 Project\\Sft 2 K9 Project\\K9 Project\\K9 Project.csproj",
       "projectName": "K9 Project",
-      "projectPath": "C:\\Users\\Michael\\Documents\\K9 Project\\K9-Movement-Project\\K9 Project\\K9 Project.csproj",
-      "packagesPath": "C:\\Users\\Michael\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Michael\\Documents\\K9 Project\\K9-Movement-Project\\K9 Project\\obj\\",
+      "projectPath": "C:\\Users\\julia\\Documents\\Second Try k9 Project\\Sft 2 K9 Project\\K9 Project\\K9 Project.csproj",
+      "packagesPath": "C:\\Users\\julia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\julia\\Documents\\Second Try k9 Project\\Sft 2 K9 Project\\K9 Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Michael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

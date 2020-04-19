@@ -16,9 +16,11 @@ namespace k9_windows
 {
     public partial class Form1 : Form
     {
+        
         bool _streaming;
         Capture _capture; //defining capture object, will instansiate withing event handler
         Capture _analyzecapture;//defining capture object, will instansiate withing event handler
+
         public Form1()
         {
             InitializeComponent();
@@ -246,5 +248,6 @@ namespace k9_windows
                //Console.WriteLine("Target was not found.");
                 MessageBox.Show("Target was not found.");
         }
+        
     }
 }
